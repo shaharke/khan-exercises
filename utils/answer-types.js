@@ -142,7 +142,7 @@ jQuery.extend( Khan.answerTypes, {
 				transformer: function( text ) {
 					return forms.decimal.transformer( text );
 				},
-				example: "an integer, like <code>6</code>"
+				example: "מספר שלם, לדוגמה: <code>6</code>"
 			},
 
 			proper: {
@@ -157,9 +157,9 @@ jQuery.extend( Khan.answerTypes, {
 				},
 				example: (function() {
 					if ( options.simplify === "optional" ) {
-						return "a <em>proper</em> fraction, like <code>1/2</code> or <code>6/10</code>";
+						return "שבר <em>אמיתי</em>, לדוגמא <code>1/2</code> או <code>6/10</code>";
 					} else {
-						return "a <em>simplified proper</em> fraction, like <code>3/5</code>";
+						return "שבר <em>אמיתי</em>, לדוגמא <code>3/5</code>";
 					}
 				})()
 			},
@@ -176,9 +176,9 @@ jQuery.extend( Khan.answerTypes, {
 				},
 				example: (function() {
 					if ( options.simplify === "optional" ) {
-						return "an <em>improper</em> fraction, like <code>10/7</code> or <code>14/8</code>";
+						return "שבר<em>מדומה</em>, לדוגמא <code>10/7</code> או <code>14/8</code>";
 					} else {
-						return "a <em>simplified improper</em> fraction, like <code>7/4</code>";
+						return "שבר <em>מדומה</em>, לדוגמא <code>7/4</code>";
 					}
 				})()
 			},
@@ -297,7 +297,7 @@ jQuery.extend( Khan.answerTypes, {
 
 					return [];
 				},
-				example: "a mixed number, like <code>1\\ 3/4</code>"
+				example: "מספר מעורב, לדוגמא <code>1\\ 3/4</code>"
 			},
 
 			decimal: {
@@ -339,9 +339,9 @@ jQuery.extend( Khan.answerTypes, {
 				},
 				example: (function() {
 					if ( options.inexact === undefined ) {
-						return "an <em>exact</em> decimal, like <code>0.75</code>";
+						return "מספר עשרוני <em>מדויק</em>, לדוגמא <code>0.75</code>";
 					} else {
-						return "a decimal, like <code>0.75</code>";
+						return "מספר עשרוני, לדוגמא <code>0.75</code>";
 					}
 				})()
 			}
