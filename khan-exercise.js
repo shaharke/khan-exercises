@@ -480,7 +480,7 @@ var Khan = (function() {
 					var makeVisible = function() {
 						jQuery( "#workarea, #hintsarea" ).css( "padding-left", 60 );
 						jQuery( "#scratchpad" ).show();
-						jQuery( "#scratchpad-show" ).text( "Hide scratchpad" );
+						jQuery( "#scratchpad-show" ).text( "הסתר דף טיוטא" );
 						visible = true;
 					};
 
@@ -501,7 +501,7 @@ var Khan = (function() {
 
 					jQuery( "#workarea, #hintsarea" ).css( "padding-left", 0 );
 					jQuery( "#scratchpad" ).hide();
-					jQuery( "#scratchpad-show" ).text( "Show scratchpad" );
+					jQuery( "#scratchpad-show" ).text( "הצג דף טיוטא" );
 					visible = false;
 				},
 
@@ -957,14 +957,14 @@ var Khan = (function() {
 		jQuery( "#check-answer-button" )
 			.removeAttr( "disabled" )
 			.removeClass( "buttonDisabled" )
-			.val('Check Answer');
+			.val('בדוק תשובה');
 	}
 
 	function disableCheckAnswer() {
 		jQuery( "#check-answer-button" )
 			.attr( "disabled", "disabled" )
 			.addClass( "buttonDisabled" )
-			.val('Please wait...');
+			.val('אנא המתן...');
 	}
 
 	function switchToExercise( exid ) {
@@ -1539,16 +1539,16 @@ var Khan = (function() {
 
 					if (slideNum < firstHintIndex) {
 						hintRemainder.fadeOut( fadeTime );
-						hintButton.val( "I'd like a hint" );
+						hintButton.val( "אפשר רמז?" );
 					} else if (slideNum >= lastHintIndex) {
 						if (states.eq( lastHintIndex ).data( 'hint' ) < hints.length) {
 							hintRemainder.fadeOut( fadeTime );
 						}
 					} else {
-						hintButton.val( "I'd like another hint" );
+						hintButton.val( "אפשר עוד רמז?" );
 
 						hintRemainder
-							.text( (totalHints - thisState.hintNum) + " remaining" )
+							.text( "נותרו עוד " + (totalHints - thisState.hintNum))
 							.fadeIn( fadeTime );
 					}
 
@@ -1761,7 +1761,7 @@ var Khan = (function() {
 		attempts = 0;
 		lastAction = (new Date).getTime();
 
-		jQuery( "#hint" ).val( "I'd like a hint" );
+		jQuery( "#hint" ).val( "אפשר רמז?" );
 		jQuery( "#hint-remainder" ).hide();
 
 		if ( once || reviewMode ) {
@@ -2118,7 +2118,7 @@ var Khan = (function() {
 			}
 
 			var hint = hints.shift();
-			jQuery( "#hint-remainder" ).text( hints.length + " remaining" )
+			jQuery( "#hint-remainder" ).text( "נותרו עוד " + hints.length )
 				.fadeIn( 500 );
 
 			// Update dimensions for sticky box
@@ -2129,7 +2129,7 @@ var Khan = (function() {
 				hintsUsed += 1;
 
 				jQuery( this )
-					.val( jQuery( this ).data( "buttonText" ) || "I'd like another hint" );
+					.val( jQuery( this ).data( "buttonText" ) || "אפשר עוד רמז?" );
 
 				var problem = jQuery( hint ).parent();
 
@@ -2363,7 +2363,7 @@ var Khan = (function() {
 				jQuery("#next-question-button").click();
 
 				if ( show ) {
-					link.text( "Try current problem" );
+					link.text( "פתור את הבעיה הנוכחית" );
 					jQuery( "#answerform" ).hide();
 
 					for ( var i = 0; i < 9; i++ ) {
@@ -2375,7 +2375,7 @@ var Khan = (function() {
 					// Rewind so next time we make a problem we'll be back at the beginning
 					prevProblem( 9 );
 				} else {
-					link.text( "Show next 10 problems" );
+					link.text( "הצג את 10 הבעיות הבאות" );
 					jQuery( "#answerform" ).show();
 				}
 
@@ -2393,9 +2393,9 @@ var Khan = (function() {
 				var show = exampleLink.data( "show" );
 
 				if ( exampleLink.data( "show" ) ){
-					exampleLink.text( "Hide acceptable answer formats" );
+					exampleLink.text( "הסתר תבניות תשובה אפשריות" );
 				} else {
-					exampleLink.text( "Show acceptable answer formats" );
+					exampleLink.text( "הצג תבניות תשובה אפשריות" );
 				}
 
 				examples.slideToggle( 190, function() {
